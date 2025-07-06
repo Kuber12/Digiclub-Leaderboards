@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digiclub Leaderboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="script.js"></script>
+    <link rel="icon" href="src/logo.png" type="image/png" sizes="32x32">
+    <style>
+        @font-face {
+            font-family: Futura Hv BT;
+            src: url('src/Futura Hv BT.ttf');
+        }
+        body{
+            font-family: 'Futura Hv BT', sans-serif;
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-[#00011B] relative">
+    <!-- Grid Pattern Overlay -->
+    <div class="absolute inset-0 opacity-20 grid-pattern"></div>
+
+    <div class="relative z-10 p-6 md:mx-16">
+        <!-- Header -->
+        <div class="flex items-center justify-between mb-8">
+            <div class="flex items-center space-x-2">
+                <div>
+                    <img class="h-10" src="src/white-logo.png" alt="logo">
+                </div>
+            </div>
+            <div class="flex items-center space-x-6 l-auto">
+                <img src="src/facebook.png" alt="facebook" class="h-8 w-8 text-white">
+                <img src="src/instagram.png" alt="intagram" class="h-8 w-8 text-white">
+                <img src="src/whatsapp.png" alt="intagram" class="h-8 w-8 text-white">
+            </div>
+        </div>
+
+        <!-- Achievement Badges Section -->
+        <div id="badgeContainer" class="flex justify-center items-center space-x-12 mb-12">
+            <div class="flex flex-col w-80 pt-20">
+                <div>
+                    <div class="flex flex-col ml-4 items-center relative">
+                        <img src="src/leafy-green.png" alt="" class=" absolute top-2 z-10">
+                        <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="src/avatar1.png" alt="avatar">
+                        <div class="text-white text-lg font-bold mt-8 p-2">Abhay Mackay</div>
+                        <div class="text-orange-400 text-s font-bold text-lg p-2">Rank #3</div>
+                    </div>
+                </div>
+                <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
+                    <div class="flex justify-between text-white px-10 py-4 mt-10">
+                        <div class="flex flex-col justify-center">
+                            <div>170</div>
+                            <div class="text-indigo-900 font-bold">Points</div>
+                        </div>
+                        <div>
+                            <img class="h-24" src="src/guardian.png" alt="Badge">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <div>PPK</div>
+                            <div>School</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col w-80">
+                <div>
+                    <div class="flex flex-col ml-4 items-center relative">
+                        <img src="src/leafy-red.png" alt="" class=" absolute top-0 z-10">
+                        <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="src/avatar2.png" alt="avatar">
+                        <div class="text-white text-lg font-bold mt-8 p-2">Abhay Mackay</div>
+                        <div class="text-orange-400 text-s font-bold text-lg p-2">Rank #1</div>
+                    </div>
+                </div>
+                <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
+                    <div class="flex justify-between text-white px-10 py-4 mt-10">
+                        <div class="flex flex-col justify-center">
+                            <div>170</div>
+                            <div class="text-indigo-900 font-bold">Points</div>
+                        </div>
+                        <div>
+                            <img class="h-24" src="src/guardian.png" alt="Badge">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <div>PPK</div>
+                            <div>School</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col w-80 pt-8">
+                <div>
+                    <div class="flex flex-col ml-4 items-center relative">
+                        <img src="src/leafy-blue.png" alt="" class=" absolute top-2 z-10">
+                        <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="src/avatar1.png" alt="avatar">
+                        <div class="text-white text-lg font-bold mt-8 p-2">Abhay Mackay</div>
+                        <div class="text-orange-400 text-s font-bold text-lg p-2">Rank #2</div>
+                    </div>
+                </div>
+                <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
+                    <div class="flex justify-between text-white px-10 py-4 mt-10">
+                        <div class="flex flex-col justify-center">
+                            <div>170</div>
+                            <div class="text-indigo-900 font-bold">Points</div>
+                        </div>
+                        <div>
+                            <img class="h-24" src="src/guardian.png" alt="Badge">
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <div>asdfasdfasdfasdf asdf</div>
+                            <div>Schasd fasdf sadf sad faool</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <div class="flex items-center">
+                <img class="inline-block ml-4" src="src/rank-icon.png" alt="leaderboard">
+                <span class="text-white text-3xl font-bold ml-4">LEADERBOARD</span>
+                <span class="text-[#4D4F6A] text-3xl font-bold ml-4">|</span>
+                <span class="text-[#4D4F6A] text-lg ml-4"> Updated every day.</span>
+            </div>
+            <div>
+                <div class="flex rounded-full bg-slate-800/50 p-4">
+                    <img class="h-8 w-8 text-white" src="src/search.svg" alt="search">
+                    <input id="searchInput" class="pl-4 text-lg w-full bg-transparent text-white text-center outline-none" type="search" placeholder="Search school, students or rank">
+                </div>
+            </div>
+            <!-- Left Side - Top Students -->
+            <div class="bg-[#23234985] rounded-3xl p-6 border border-slate-700">
+                <div class="flex items-center flex mb-6 text-center max-h-full">
+                    <div>
+                        <span class="text-white text-lg font-bold">TOP</span>
+                        <span class="text-5xl text-blue-500 block font-bold">10</span>
+                    </div>
+                    <div class="ml-4 text-white text-lg font-bold">
+                        STUDENT'S RANKINGS
+                    </div>
+                </div>
+
+                <div class="mb-4">
+                    <div id="" class="space-y-3">
+                        
+                        <!-- Student Rank 1 -->
+                        <div class="">
+                            <table class="min-w-full table-auto text-left border-separate border-spacing-y-2">
+                                <thead>
+                                    <tr class="h-12 text-lg bg-white/10 text-gray-400">
+                                        <th class="px-4 py-2 rounded-tl-full rounded-bl-full">Rank</th>
+                                        <th class="px-4 py-2">Student Name</th>
+                                        <th class="px-4 py-2 text-center">Points</th>
+                                        <th class="px-4 py-2 text-center rounded-tr-full rounded-br-full">Level</th>
+                                    </tr>
+                                </thead>                    
+                                <tbody id="top10-ranking">
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">1</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">340</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">2</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">320</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">3</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">310</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">4</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">300</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">5</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">290</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">6</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">250</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">7</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">200</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">8</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">150</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">9</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">100</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">10</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">50</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side - All Students -->
+            <div class="bg-[#23234985] rounded-3xl p-6 border border-slate-700">
+                <div class="flex items-center justify-between mb-6">
+                    <div>
+                        <span class="text-5xl text-blue-500 block font-bold">ALL</span>
+                        <span class="text-white text-lg font-bold">RANKINGS</span>
+                    </div>
+                    <div class="relative">
+                        <select id="schoolSelected" class="appearance-none bg-[#0D0D28] text-white text-sm font-bold py-2 pr-10 pl-4 rounded-lg border-2 border-white-700">
+                        <option selected>All</option>
+                        </select>
+                        <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-white">
+                        ▼
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="">
+                    <div class="">
+                        <div class="">
+                            <table class="min-w-full table-auto text-left border-separate border-spacing-y-2">
+                                <thead>
+                                    <tr class="h-12 text-lg bg-white/10 text-gray-400">
+                                        <th class="px-4 py-2 rounded-tl-full rounded-bl-full">Rank</th>
+                                        <th class="px-4 py-2">Student Name</th>
+                                        <th class="px-4 py-2 text-center">Points</th>
+                                        <th class="px-4 py-2 text-center rounded-tr-full rounded-br-full">Level</th>
+                                    </tr>
+                                </thead>                    
+                                <tbody id="all-ranking" class="space-y-3 overflow-auto scrollbar-thin scrollbar-track-gray-700 scrollbar-thumb-gray-600">
+                                    
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">1</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">340</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">2</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">320</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">3</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">310</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">4</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">300</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">5</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">290</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">6</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">250</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">7</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">200</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">8</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">150</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">9</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">100</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+
+                                    <tr class="mt-4 rounded-full transition-colors hover:bg-slate-700/50">
+                                        <td class="pl-4 rounded-tl-full rounded-bl-full">
+                                        <div class="w-8 h-8 rounded-full text-white font-bold flex items-center justify-center text-lg">10</div>
+                                        </td>
+                                        <td>
+                                        <div class="flex items-center space-x-4">
+                                            <img class="w-16 h-16 rounded-full" src="src/default.png" alt="avatar">
+                                            <div class="flex flex-col justify-center">
+                                            <div class="text-white text-lg font-bold">Student Name</div>
+                                            <div class="text-slate-500 text-sm">School Name</div>
+                                            </div>
+                                        </div>
+                                        </td>
+                                        <td class="text-white text-lg font-bold text-center align-middle">50</td>
+                                        <td class="pr-4 rounded-tr-full rounded-br-full">
+                                        <div class="flex justify-end">
+                                            <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
+                                        </div>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                            </table>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div id="paginationOptions" class="flex justify-center mt-8">
+                    <div class="flex items-center space-x-2 text-gray-400 text-sm">
+                        <span class="px-2 py-1 bg-blue-500 text-white rounded">1</span>
+                        <span class="px-2 py-1 hover:bg-slate-700 rounded cursor-pointer">2</span>
+                        <span class="px-2 py-1 hover:bg-slate-700 rounded cursor-pointer">3</span>
+                        <span>...</span>
+                        <span class="px-2 py-1 hover:bg-slate-700 rounded cursor-pointer">10</span>
+                        <span class="px-2 py-1 hover:bg-slate-700 rounded cursor-pointer">Next</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
