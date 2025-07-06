@@ -352,8 +352,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 return "src/initiator.png";
             case points >= 0:
                 return "src/newbie.png";
-            default:
-                return "src/newbie.png";
         }
     }
 });
