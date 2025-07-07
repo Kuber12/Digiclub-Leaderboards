@@ -56,92 +56,86 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
 
-    function updatePodium(){
+    function updatePodium() {
         const podium = document.getElementById('badgeContainer');
         podium.innerHTML = ''; // Clear existing cards
 
         podium.innerHTML = `
         <div class="flex justify-center items-center space-x-12 mb-12">
+
+            <!-- Rank 3 -->
             <div class="flex flex-col w-80 pt-20">
-                <div>
-                    <div class="flex flex-col ml-4 items-center relative">
-                        <img src="src/leafy-green.png" alt="" class=" absolute top-2 z-10">
-                        <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="${top10[2]["Avatar URL"]}" alt="avatar">
-                        <div class="text-white text-lg font-bold mt-8 p-2">${top10[2]["Student Name"]}</div>
-                        <div class="text-orange-400 text-s font-bold text-lg p-2">Rank #3</div>
-                    </div>
+                <div class="flex flex-col ml-4 items-center relative">
+                    <img src="src/leafy-green.png" alt="" class="absolute z-10">
+                    <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="${top10[2]["Avatar URL"]}" alt="avatar">
+                    <div class="text-white text-lg font-bold mt-8 p-2">${top10[2]["Student Name"]}</div>
+                    <div class="text-orange-400 text-lg font-bold p-2">Rank #3</div>
                 </div>
                 <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
-                    <div class="flex justify-between text-white px-10 py-4 mt-10">
-                        <div class="flex flex-col justify-center">
-                            <div>${top10[2]["Point"]}</div>
-                            <div class="text-indigo-900 font-bold">Points</div>
-                        </div>
+                    <div class="flex justify-between text-white px-6 py-4 mt-10">
                         <div>
-                            <img class="h-24" src="${pointToBadge(top10[2]["Point"])}" alt="Badge">
+                            <img class="h-24 animate-pulse" src="src/guardian.png" alt="Badge">
                         </div>
-                        <div class="flex flex-col justify-center">
-                            <div>PPK</div>
-                            <div>School</div>
+                        <div class="flex flex-col justify-center text-left">
+                            <div class="w-40 font-bold">${top10[2]["School Name"]}</div>
+                            <div>
+                                <span class="text-indigo-900 font-bold">${top10[2]["Point"]}</span> Points
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Rank 1 -->
             <div class="flex flex-col w-80">
-                <div>
-                    <div class="flex flex-col ml-4 items-center relative">
-                        <img src="src/leafy-red.png" alt="" class=" absolute top-0 z-10">
-                        <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="${top10[0]["Avatar URL"]}" alt="avatar">
-                        <div class="text-white text-lg font-bold mt-8 p-2">${top10[0]["Student Name"]}</div>
-                        <div class="text-red-400 text-s font-bold text-lg p-2">Rank #1</div>
-                    </div>
+                <div class="flex flex-col ml-4 items-center relative">
+                    <img src="src/leafy-red.png" alt="" class="absolute top-0 z-10">
+                    <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="${top10[0]["Avatar URL"]}" alt="avatar">
+                    <div class="text-white text-lg font-bold mt-8 p-2">${top10[0]["Student Name"]}</div>
+                    <div class="text-red-400 text-lg font-bold p-2">Rank #1</div>
                 </div>
                 <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
-                    <div class="flex justify-between text-white px-10 py-4 mt-10">
-                        <div class="flex flex-col justify-center">
-                            <div>${top10[0]["Point"]}</div>
-                            <div class="text-indigo-900 font-bold">Points</div>
-                        </div>
+                    <div class="flex justify-between text-white px-6 py-4 mt-10">
                         <div>
-                            <img class="h-24" src="${pointToBadge(top10[0]["Point"])}" alt="Badge">
+                            <img class="h-24 animate-pulse" src="src/guardian.png" alt="Badge">
                         </div>
-                        <div class="flex flex-col justify-center">
-                            <div>PPK</div>
-                            <div>School</div>
+                        <div class="flex flex-col justify-center text-left">
+                            <div class="w-40 font-bold">${top10[0]["School Name"]}</div>
+                            <div>
+                                <span class="text-indigo-900 font-bold">${top10[0]["Point"]}</span> Points
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <!-- Rank 2 -->
             <div class="flex flex-col w-80 pt-8">
-                <div>
-                    <div class="flex flex-col ml-4 items-center relative">
-                        <img src="src/leafy-blue.png" alt="" class=" absolute top-2 z-10">
-                        <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="${top10[1]["Avatar URL"]}" alt="avatar">
-                        <div class="text-white text-lg font-bold mt-8 p-2">${top10[1]["Student Name"]}</div>
-                        <div class="text-blue-400 text-s font-bold text-lg p-2">Rank #2</div>
-                    </div>
+                <div class="flex flex-col ml-4 items-center relative">
+                    <img src="src/leafy-blue.png" alt="" class="absolute top-2 z-10">
+                    <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="${top10[1]["Avatar URL"]}" alt="avatar">
+                    <div class="text-white text-lg font-bold mt-8 p-2">${top10[1]["Student Name"]}</div>
+                    <div class="text-blue-400 text-lg font-bold p-2">Rank #2</div>
                 </div>
                 <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
-                    <div class="flex justify-between text-white px-10 py-4 mt-10">
-                        <div class="flex flex-col justify-center">
-                            <div>${top10[1]["Point"]}</div>
-                            <div class="text-indigo-900 font-bold">Points</div>
-                        </div>
+                    <div class="flex justify-between text-white px-6 py-4 mt-10">
                         <div>
-                            <img class="h-24" src="${pointToBadge(top10[1]["Point"])}" alt="Badge">
+                            <img class="h-24 animate-pulse" src="src/guardian.png" alt="Badge">
                         </div>
-                        <div class="flex flex-col justify-center">
-                            <div>PPK</div>
-                            <div>School</div>
+                        <div class="flex flex-col justify-center text-left">
+                            <div class="w-40 font-bold">${top10[1]["School Name"]}</div>
+                            <div>
+                                <span class="text-indigo-900 font-bold">${top10[1]["Point"]}</span> Points
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
         </div>
-        
         `;
     }
+
 
     function updateTop10() {
         top10div.innerHTML = "";
@@ -342,7 +336,9 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function pointToBadge(points){
         switch (true) {
-            case points >= 200:
+            case points >= 400:
+                return "src/legend.png";
+            case points >= 250:
                 return "src/guardian.png";
             case points >= 150:
                 return "src/knight.png";
