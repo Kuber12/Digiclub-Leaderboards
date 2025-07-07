@@ -150,7 +150,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <td>
                         <div class="flex items-center space-x-4">
-                            <img class="w-16 h-16 rounded-full" src="${student["Avatar URL"] || "src/default.png"}" alt="avatar">
+                            <img class="w-16 h-16 rounded-full hidden md:block" src="${student["Avatar URL"] || "src/default.png"}" alt="avatar">
                             <div class="flex flex-col justify-center">
                                 <div class="text-white text-lg font-bold">${student["Student Name"]}</div>
                                 <div class="text-slate-500 text-sm">${student["School Name"]}</div>
@@ -158,7 +158,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </td>
 
-                    <td class="text-white text-lg font-bold text-center align-middle">
+                    <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">
                         ${student["Point"]}
                     </td>
 
@@ -189,7 +189,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
                     <td>
                         <div class="flex items-center space-x-4">
-                            <img class="w-16 h-16 rounded-full" src="${student["Avatar URL"] || "src/default.png"}" alt="avatar">
+                            <img class="w-16 h-16 rounded-full hidden md:block" src="${student["Avatar URL"] || "src/default.png"}" alt="avatar">
                             <div class="flex flex-col justify-center">
                                 <div class="text-white text-lg font-bold">${student["Student Name"]}</div>
                                 <div class="text-slate-500 text-sm">${student["School Name"]}</div>
@@ -197,7 +197,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         </div>
                     </td>
 
-                    <td class="text-white text-lg font-bold text-center align-middle">
+                    <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">
                         ${student["Point"]}
                     </td>
 

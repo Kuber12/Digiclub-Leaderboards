@@ -30,13 +30,17 @@
                 </div>
             </div>
             <div class="flex items-center space-x-6 l-auto">
-                <img src="src/facebook.png" alt="facebook" class="h-8 w-8 text-white">
-                <img src="src/instagram.png" alt="intagram" class="h-8 w-8 text-white">
+                <a href="https://www.facebook.com/groups/officialdigiclub" target="_blank" rel="noopener noreferrer" class="hover:-translate-y-1 transition duration-300">
+                    <img src="src/facebook.png" alt="facebook" class="h-8 w-8 text-white">
+                </a>
+                <a href="https://www.instagram.com/the.digiclub/" target="_blank" rel="noopener noreferrer" class="hover:-translate-y-1 transition duration-300">
+                    <img src="src/instagram.png" alt="intagram" class="h-8 w-8 text-white">
+                </a>
             </div>
         </div>
 
         <!-- Achievement Badges Section -->
-        <div id="badgeContainer" class="flex justify-center items-center space-x-12 mb-12">
+        <div id="badgeContainer" class="flex justify-center items-center space-x-12 mb-12" style="display: none;">
             <div class="flex flex-col w-80 pt-20">
                 <div>
                     <div class="flex flex-col ml-4 items-center relative">
@@ -111,20 +115,20 @@
 
         <!-- Main Content -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div class="flex items-center">
+            <div class="flex items-center order-1 lg:order-1">
                 <img class="inline-block ml-4" src="src/rank-icon.png" alt="leaderboard">
                 <span class="text-white text-3xl font-bold ml-4">LEADERBOARD</span>
-                <span class="text-[#4D4F6A] text-3xl font-bold ml-4">|</span>
-                <span class="text-[#4D4F6A] text-lg ml-4"> Updated every day.</span>
+                <span class="hidden sm:block text-[#4D4F6A] text-3xl font-bold ml-4">|</span>
+                <span class="hidden sm:block text-[#4D4F6A] text-lg ml-4"> Updated every day.</span>
             </div>
-            <div>
+            <div class="order-3 lg:order-2">
                 <div class="flex rounded-full bg-slate-800/50 p-4">
                     <img class="h-8 w-8 text-white" src="src/search.svg" alt="search">
                     <input id="searchInput" class="pl-4 text-lg w-full bg-transparent text-white text-center outline-none" type="search" placeholder="Search school, students or rank">
                 </div>
             </div>
             <!-- Left Side - Top Students -->
-            <div class="bg-[#23234985] rounded-3xl p-6 border border-slate-700">
+            <div class="bg-[#23234985] rounded-3xl p-6 border border-slate-700 order-2 lg:order-3">
                 <div class="flex items-center flex mb-6 text-center max-h-full">
                     <div>
                         <span class="text-white text-lg font-bold">TOP</span>
@@ -145,7 +149,7 @@
                                     <tr class="h-12 text-lg bg-white/10 text-gray-400">
                                         <th class="px-4 py-2 rounded-tl-full rounded-bl-full">Rank</th>
                                         <th class="px-4 py-2">Student Name</th>
-                                        <th class="px-4 py-2 text-center">Points</th>
+                                        <th class="px-4 py-2 text-center sm:block hidden">Points</th>
                                         <th class="px-4 py-2 text-center rounded-tr-full rounded-br-full">Level</th>
                                     </tr>
                                 </thead>                    
@@ -163,7 +167,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">340</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">340</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -184,7 +188,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">320</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">320</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -205,7 +209,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">310</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">310</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -226,7 +230,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">300</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">300</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -247,7 +251,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">290</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">290</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -268,7 +272,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">250</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">250</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -289,7 +293,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">200</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">200</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -310,7 +314,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">150</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">150</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -331,7 +335,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">100</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">100</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -352,7 +356,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">50</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">50</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -368,8 +372,8 @@
             </div>
 
             <!-- Right Side - All Students -->
-            <div class="bg-[#23234985] rounded-3xl p-6 border border-slate-700">
-                <div class="flex items-center justify-between mb-6">
+            <div class="bg-[#23234985] rounded-3xl p-6 border border-slate-700  order-4 lg:order-4">
+                <div class="flex flex-col md:flex  items-center justify-between mb-6">
                     <div>
                         <span class="text-5xl text-blue-500 block font-bold">ALL</span>
                         <span class="text-white text-lg font-bold">RANKINGS</span>
@@ -392,7 +396,7 @@
                                     <tr class="h-12 text-lg bg-white/10 text-gray-400">
                                         <th class="px-4 py-2 rounded-tl-full rounded-bl-full">Rank</th>
                                         <th class="px-4 py-2">Student Name</th>
-                                        <th class="px-4 py-2 text-center">Points</th>
+                                        <th class="px-4 py-2 text-center sm:block hidden">Points</th>
                                         <th class="px-4 py-2 text-center rounded-tr-full rounded-br-full">Level</th>
                                     </tr>
                                 </thead>                    
@@ -411,7 +415,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">340</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">340</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -432,7 +436,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">320</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">320</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -453,7 +457,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">310</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">310</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -474,7 +478,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">300</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">300</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -495,7 +499,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">290</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">290</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -516,7 +520,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">250</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">250</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -537,7 +541,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">200</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">200</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -558,7 +562,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">150</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">150</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -579,7 +583,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">100</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">100</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
@@ -600,7 +604,7 @@
                                             </div>
                                         </div>
                                         </td>
-                                        <td class="text-white text-lg font-bold text-center align-middle">50</td>
+                                        <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">50</td>
                                         <td class="pr-4 rounded-tr-full rounded-br-full">
                                         <div class="flex justify-end">
                                             <img class="w-12 rounded-full" src="src/guardian.png" alt="guardian avatar">
