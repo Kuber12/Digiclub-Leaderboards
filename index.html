@@ -6,7 +6,7 @@
     <title>Digiclub Leaderboard</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="script.js"></script>
-    <link rel="icon" href="src/logo.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="src/guardian.png" type="image/png" sizes="32x32">
     <style>
         @font-face {
             font-family: Futura Hv BT;
@@ -40,71 +40,65 @@
         </div>
 
         <!-- Achievement Badges Section -->
-        <div id="badgeContainer" class="flex justify-center items-center space-x-12 mb-12" style="display: none;">
+        <div id="badgeContainer" class="flex justify-center items-center space-x-4 lg:space-x-12 mb-12">
             <div class="flex flex-col w-80 pt-20">
-                <div>
-                    <div class="flex flex-col ml-4 items-center relative">
-                        <img src="src/leafy-green.png" alt="" class=" absolute z-10">
-                        <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="src/default.png" alt="avatar">
-                        <div class="text-white text-lg font-bold mt-8 p-2">Student Name</div>
-                        <div class="text-orange-400 text-s font-bold text-lg p-2">Rank #3</div>
-                    </div>
+                <div class="flex flex-col ml-4 items-center relative">
+                    <img src="src/leafy-green.png" alt="" class="absolute z-10 w-20 top-3 lg:w-36">
+                    <img class="lg:w-32 lg:h-32 w-20 h-20 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="src/default.png" alt="avatar">
+                    <div class="text-white text-sm lg:text-lg lg:p-2 lg:mt-8 p-0 font-bold mt-2">Student Name</div>
+                    <div class="text-orange-400 text-md lg:text-lg lg:p-2 lg:mt-8 p-0 font-bold mt-2">Rank #3</div>
                 </div>
                 <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
-                    <div class="flex justify-between text-white px-6 py-4 mt-10">
+                    <div class="flex flex-col items-center md:flex-start md:flex-row justify-between text-white px-2 md:px-6 py-4 mt-2 md:mt-10 gap-4">
                         <div>
-                            <img class="h-24 animate-pulse" src="src/guardian.png" alt="Badge">
+                            <img class="w-14 lg:w-20 animate-pulse" src="src/guardian.png" alt="Badge">
                         </div>
-                        <div class="flex flex-col justify-center text-left">
-                            <div class="w-40 font-bold">School Name</div>
+                        <div class="flex flex-col justify-center text-center md:text-left">
+                            <div class="text-sm lg:text-lg font-bold">School Name</div>
                             <div>
-                                <div><span class="text-indigo-900 font-bold" >170</span> Points </div>
+                                <span class="text-sm lg:text-lg text-indigo-900 font-bold">170</span> Points
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col w-80">
-                <div>
-                    <div class="flex flex-col ml-4 items-center relative">
-                        <img src="src/leafy-red.png" alt="" class=" absolute top-0 z-10">
-                        <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="src/default.png" alt="avatar">
-                        <div class="text-white text-lg font-bold mt-8 p-2">Student Name</div>
-                        <div class="text-red-400 text-s font-bold text-lg p-2">Rank #1</div>
-                    </div>
+            <div class="flex flex-col w-80 pt-0">
+                <div class="flex flex-col ml-4 items-center relative">
+                    <img src="src/leafy-red.png" alt="" class="absolute top-3 z-10 w-20 lg:w-36">
+                    <img class="lg:w-32 lg:h-32 w-20 h-20 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="src/default.png" alt="avatar">
+                    <div class="text-white text-sm lg:text-lg lg:p-2 lg:mt-8 p-0 font-bold mt-2">Student Name</div>
+                    <div class="text-red-400 text-md lg:text-lg lg:p-2 lg:mt-8 p-0 font-bold mt-2">Rank #1</div>
                 </div>
                 <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
-                    <div class="flex justify-between text-white px-6 py-4 mt-10">
+                    <div class="flex flex-col items-center md:flex-start md:flex-row justify-between text-white px-2 md:px-6 py-4 mt-2 md:mt-10 gap-4">
                         <div>
-                            <img class="h-24 animate-pulse" src="src/guardian.png" alt="Badge">
+                            <img class="w-14 lg:w-20 animate-pulse" src="src/guardian.png" alt="Badge">
                         </div>
-                        <div class="flex flex-col justify-center text-left">
-                            <div class="w-40 font-bold">School Name</div>
+                        <div class="flex flex-col justify-center text-center md:text-left">
+                            <div class="text-sm lg:text-lg font-bold">School Name</div>
                             <div>
-                                <div><span class="text-indigo-900 font-bold" >170</span> Points </div>
+                                <span class="text-sm lg:text-lg text-indigo-900 font-bold">170</span> Points
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="flex flex-col w-80 pt-8">
-                <div>
-                    <div class="flex flex-col ml-4 items-center relative">
-                        <img src="src/leafy-blue.png" alt="" class=" absolute top-2 z-10">
-                        <img class="w-32 h-32 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="src/default.png" alt="avatar">
-                        <div class="text-white text-lg font-bold mt-8 p-2">Student Name</div>
-                        <div class="text-blue-400 text-s font-bold text-lg p-2">Rank #2</div>
-                    </div>
+            <div class="flex flex-col w-80 pt-10">
+                <div class="flex flex-col ml-4 items-center relative">
+                    <img src="src/leafy-blue.png" alt="" class="absolute top-3 z-10 w-20 lg:w-36">
+                    <img class="lg:w-32 lg:h-32 w-20 h-20 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="src/default.png" alt="avatar">
+                    <div class="text-white text-sm lg:text-lg lg:p-2 lg:mt-8 p-0 font-bold mt-2">Student Name</div>
+                    <div class="text-blue-400 text-md lg:text-lg lg:p-2 lg:mt-8 p-0 font-bold mt-2">Rank #2</div>
                 </div>
                 <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
-                    <div class="flex justify-between text-white px-6 py-4 mt-10">
+                    <div class="flex flex-col items-center md:flex-start md:flex-row justify-between text-white px-2 md:px-6 py-4 mt-2 md:mt-10 gap-4">
                         <div>
-                            <img class="h-24 animate-pulse" src="src/guardian.png" alt="Badge">
+                            <img class="w-14 lg:w-20 animate-pulse" src="src/guardian.png" alt="Badge">
                         </div>
-                        <div class="flex flex-col justify-center text-left">
-                            <div class="w-40 font-bold">School Name</div>
+                        <div class="flex flex-col justify-center text-center md:text-left">
+                            <div class="text-sm lg:text-lg font-bold">School Name</div>
                             <div>
-                                <div><span class="text-indigo-900 font-bold" >170</span> Points </div>
+                                <span class="text-sm lg:text-lg text-indigo-900 font-bold">170</span> Points
                             </div>
                         </div>
                     </div>
@@ -115,9 +109,9 @@
 
         <!-- Main Content -->
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div class="flex items-center order-1 lg:order-1">
-                <img class="inline-block ml-4" src="src/rank-icon.png" alt="leaderboard">
-                <span class="text-white text-3xl font-bold ml-4">LEADERBOARD</span>
+            <div class="flex justify-center items-center md:justify-start order-1 lg:order-1">
+                <img class="inline-block ml-4 w-6 h-6 md:w-10 md:h-10" src="src/rank-icon.png" alt="leaderboard">
+                <span class="text-white text-lg md:text-3xl font-bold ml-4">LEADERBOARD</span>
                 <span class="hidden sm:block text-[#4D4F6A] text-3xl font-bold ml-4">|</span>
                 <span class="hidden sm:block text-[#4D4F6A] text-lg ml-4"> Updated every day.</span>
             </div>
@@ -373,13 +367,13 @@
 
             <!-- Right Side - All Students -->
             <div class="bg-[#23234985] rounded-3xl p-6 border border-slate-700  order-4 lg:order-4">
-                <div class="flex flex-col md:flex  items-center justify-between mb-6">
+                <div class="flex flex-col md:flex md:flex-row  items-center justify-between mb-6">
                     <div>
                         <span class="text-5xl text-blue-500 block font-bold">ALL</span>
                         <span class="text-white text-lg font-bold">RANKINGS</span>
                     </div>
                     <div class="relative">
-                        <select id="schoolSelected" class="appearance-none bg-[#0D0D28] text-white text-sm font-bold py-2 pr-10 pl-4 rounded-lg border-2 border-white-700">
+                        <select id="schoolSelected" class="appearance-none bg-[#0D0D28] text-white text-sm font-bold py-2 pr-10 pl-4 rounded-lg border-2 border-white-700 w-full">
                         <option selected>All</option>
                         </select>
                         <div class="pointer-events-none absolute inset-y-0 right-3 flex items-center text-white">
@@ -394,7 +388,7 @@
                             <table class="min-w-full table-auto text-left border-separate border-spacing-y-2">
                                 <thead>
                                     <tr class="h-12 text-lg bg-white/10 text-gray-400">
-                                        <th class="pl-1 py-2 rounded-tl-full rounded-bl-full">Rank</th>
+                                        <th class="pl-4 py-2 rounded-tl-full rounded-bl-full">Rank</th>
                                         <th class="px-4 py-2">Student Name</th>
                                         <th class="px-4 py-2 text-center sm:block hidden">Points</th>
                                         <th class="px-4 py-2 text-center rounded-tr-full rounded-br-full">Level</th>
