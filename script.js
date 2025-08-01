@@ -1,6 +1,18 @@
-
-
 document.addEventListener("DOMContentLoaded", function () {
+    const rank = document.getElementById("rank");
+    const popup = document.getElementById('popup');
+
+    rank.addEventListener('click', () => {
+        popup.classList.toggle('hidden');
+    });
+
+    // Optional: click outside the image to close
+    popup.addEventListener('click', (e) => {
+        if (e.target === popup) {
+            popup.classList.add('hidden');
+        }
+    });
+
     const url = "https://opensheet.elk.sh/1wTvyGj1RdO-vfD0IqfkGi-6FwI--9IuqGq26YBoruGc/ALLLeaderboards";
     let studentList = [];
     let top10 = [];
@@ -21,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             studentList = data
-                .sort((a, b) => b.Point - a.Point)
+                .sort((a, b) => b[["ARC II Point "]] - a[["ARC II Point "]])
                 .map((student, index) => {
                     student.Rank = index + 1;
                     return student;
@@ -61,75 +73,65 @@ document.addEventListener("DOMContentLoaded", function () {
         podium.innerHTML = ''; // Clear existing cards
 
         podium.innerHTML = `
-        <!-- Rank #3 -->
-        <div class="flex flex-col w-72 pt-20 md:pt-36">
+
+        <div class="flex flex-col w-80 pt-20">
             <div class="flex flex-col ml-4 items-center relative">
                 <img src="src/leafy-green.png" alt="" class="absolute z-10 w-20 top-3 lg:w-36">
-                <img class="lg:w-32 lg:h-32 w-20 h-20 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]"
-                    src="${top10[2]['Avatar URL']}" alt="avatar">
-                <div class="text-white text-sm lg:text-lg lg:p-2 lg:mt-8 font-bold mt-2">${top10[2]['Student Name']}</div>
-                <div class="text-orange-400 text-md lg:text-lg lg:p-2 font-bold mt-2">Rank #3</div>
+                <img class="lg:w-32 lg:h-32 w-20 h-20 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="${top10[2]['Avatar URL']}" alt="avatar">
+                <div class="text-white text-sm lg:text-lg lg:p-2 lg:mt-8 p-0 font-bold mt-2">${top10[2]['Student Name']}</div>
+                <div class="text-orange-400 text-md lg:text-lg lg:p-2 p-0 font-bold mt-2">Rank #3</div>
             </div>
             <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
-                <div
-                    class="flex flex-col md:flex-row items-center justify-between text-white px-2 md:px-6 py-4 mt-2 md:mt-10 gap-4">
-                    <div>
-                        <img class="w-14 lg:w-20 animate-pulse" src="src/guardian.png" alt="Badge">
+                <div class="flex flex-col items-center md:flex-start md:flex-row justify-between text-white px-2 md:px-6 py-4 mt-2 md:mt-10 gap-4">
+                    <div class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
+                        <img class="w-auto h-full object-contain animate-pulse" src="${pointToBadge(top10[2]["ARC II Point "])}" alt="Badge">
                     </div>
                     <div class="flex flex-col justify-center text-center md:text-left">
                         <div class="text-sm lg:text-lg font-bold">${top10[2]['School Name']}</div>
-                        <div>
-                            <span class="text-sm lg:text-lg text-indigo-900 font-bold">${top10[2]['Point']}</span> Points
+                        <div class="text-center md:text-right">
+                            <span class="text-sm lg:text-2xl text-indigo-900 font-bold">${top10[2]["ARC II Point "]}</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Rank #1 -->
-        <div class="flex flex-col w-72 pt-0">
+        <div class="flex flex-col w-80 pt-0">
             <div class="flex flex-col ml-4 items-center relative">
                 <img src="src/leafy-red.png" alt="" class="absolute top-3 z-10 w-20 lg:w-36">
-                <img class="lg:w-32 lg:h-32 w-20 h-20 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]"
-                    src="${top10[0]['Avatar URL']}" alt="avatar">
-                <div class="text-white text-sm lg:text-lg lg:p-2 lg:mt-8 font-bold mt-2">${top10[0]['Student Name']}</div>
-                <div class="text-red-400 text-md lg:text-lg lg:p-2 font-bold mt-2">Rank #1</div>
+                <img class="lg:w-32 lg:h-32 w-20 h-20 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="${top10[0]['Avatar URL']}" alt="avatar">
+                <div class="text-white text-sm lg:text-lg lg:p-2 lg:mt-8 p-0 font-bold mt-2">${top10[0]['Student Name']}</div>
+                <div class="text-red-400 text-md lg:text-lg lg:p-2 p-0 font-bold mt-2">Rank #1</div>
             </div>
             <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
-                <div
-                    class="flex flex-col md:flex-row items-center justify-between text-white px-2 md:px-6 py-4 mt-2 md:mt-10 gap-4">
-                    <div>
-                        <img class="w-14 lg:w-20 animate-pulse" src="src/guardian.png" alt="Badge">
+                <div class="flex flex-col items-center md:flex-start md:flex-row justify-between text-white px-2 md:px-6 py-4 mt-2 md:mt-10 gap-4">
+                    <div class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
+                        <img class="w-auto h-full object-contain animate-pulse" src="${pointToBadge(top10[0]["ARC II Point "])}" alt="Badge">
                     </div>
                     <div class="flex flex-col justify-center text-center md:text-left">
                         <div class="text-sm lg:text-lg font-bold">${top10[0]['School Name']}</div>
-                        <div>
-                            <span class="text-sm lg:text-lg text-indigo-900 font-bold">${top10[0]['Point']}</span> Points
+                        <div class="text-center md:text-right">
+                            <span class="text-sm lg:text-2xl text-indigo-900 font-bold">${top10[0]["ARC II Point "]}</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <!-- Rank #2 -->
-        <div class="flex flex-col w-72 pt-10 md:pt-28">
+        <div class="flex flex-col w-80 pt-10">
             <div class="flex flex-col ml-4 items-center relative">
                 <img src="src/leafy-blue.png" alt="" class="absolute top-3 z-10 w-20 lg:w-36">
-                <img class="lg:w-32 lg:h-32 w-20 h-20 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]"
-                    src="${top10[1]['Avatar URL']}" alt="avatar">
-                <div class="text-white text-sm lg:text-lg lg:p-2 lg:mt-8 font-bold mt-2">${top10[1]['Student Name']}</div>
-                <div class="text-blue-400 text-md lg:text-lg lg:p-2 font-bold mt-2">Rank #2</div>
+                <img class="lg:w-32 lg:h-32 w-20 h-20 rounded-full relative shadow-[0_0px_60px_8px_rgba(8,_112,_184,_0.7)]" src="${top10[1]['Avatar URL']}" alt="avatar">
+                <div class="text-white text-sm lg:text-lg lg:p-2 lg:mt-8 p-0 font-bold mt-2">${top10[1]['Student Name']}</div>
+                <div class="text-blue-400 text-md lg:text-lg lg:p-2 p-0 font-bold mt-2">Rank #2</div>
             </div>
             <div style="background-image: url('src/podium.png');" class="bg-no-repeat bg-contain h-36">
-                <div
-                    class="flex flex-col md:flex-row items-center justify-between text-white px-2 md:px-6 py-4 mt-2 md:mt-10 gap-4">
-                    <div>
-                        <img class="w-14 lg:w-20 animate-pulse" src="src/guardian.png" alt="Badge">
+                <div class="flex flex-col items-center md:flex-start md:flex-row justify-between text-white px-2 md:px-6 py-4 mt-2 md:mt-10 gap-4">
+                    <div class="flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
+                        <img class="w-auto h-full object-contain animate-pulse" src="${pointToBadge(top10[1]["ARC II Point "])}" alt="Badge">
                     </div>
                     <div class="flex flex-col justify-center text-center md:text-left">
                         <div class="text-sm lg:text-lg font-bold">${top10[1]['School Name']}</div>
-                        <div>
-                            <span class="text-sm lg:text-lg text-indigo-900 font-bold">${top10[1]['Point']}</span> Points
+                        <div class="text-center md:text-right">
+                            <span class="text-sm lg:text-2xl text-indigo-900 font-bold">${top10[1]["ARC II Point "]}</span>
                         </div>
                     </div>
                 </div>
@@ -161,12 +163,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     </td>
 
                     <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">
-                        ${student["Point"]}
+                        ${student["ARC II Point "]}
                     </td>
 
                     <td class="pr-4 rounded-tr-full rounded-br-full">
                         <div class="flex justify-end">
-                            <img class="w-12 rounded-full" src="${pointToBadge(student["Point"])}" alt="guardian avatar">
+                            <img class="w-12 rounded-full" src="${pointToBadge(student["ARC II Point "])}" alt="guardian avatar">
                         </div>
                     </td>
                 </tr>
@@ -200,12 +202,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     </td>
 
                     <td class="text-white text-lg font-bold text-center align-middle sm:block hidden">
-                        ${student["Point"]}
+                        ${student["ARC II Point "]}
                     </td>
 
                     <td class="pr-4 rounded-tr-full rounded-br-full">
                         <div class="flex justify-end">
-                            <img class="w-12 rounded-full" src="${pointToBadge(student["Point"])}" alt="guardian avatar">
+                            <img class="w-12 rounded-full" src="${pointToBadge(student["ARC II Point "])}" alt="guardian avatar">
                         </div>
                     </td>
                 </tr>
@@ -338,13 +340,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function pointToBadge(points){
         switch (true) {
+            case points >= 600:
+                return "src/apex.png";
             case points >= 400:
-                return "src/legend.png";
-            case points >= 250:
                 return "src/guardian.png";
-            case points >= 150:
+            case points >= 225:
                 return "src/knight.png";
-            case points >= 100:
+            case points >= 125:
                 return "src/creator.png";
             case points >= 50:
                 return "src/initiator.png";
