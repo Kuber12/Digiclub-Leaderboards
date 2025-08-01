@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .then(response => response.json())
         .then(data => {
             studentList = data
+                .filter(student => student["School Name"]?.trim() && student["Student Name"]?.trim())
                 .sort((a, b) => b[["ARC II Point "]] - a[["ARC II Point "]])
                 .map((student, index) => {
                     student.Rank = index + 1;
@@ -350,7 +351,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 return "src/creator.png";
             case points >= 50:
                 return "src/initiator.png";
-            case points >= 0:
+            default:
                 return "src/newbie.png";
         }
     }
